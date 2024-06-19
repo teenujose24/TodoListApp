@@ -29,16 +29,6 @@ const TodoList: React.FC<TodoListProps> = ({ todos, toggleCompleteTodo, deleteTo
     )}
     keyExtractor={(item) => item.id.toString()}
   />
-    // <View style={styles.listContainer}>
-    //   {todos.map(todo => (
-    //     <TodoItem
-    //       key={todo.id}
-    //       todo={todo}
-    //       toggleCompleteTodo={toggleCompleteTodo}
-    //       deleteTodo={deleteTodo}
-    //     />
-    //   ))}
-    // </View>
   );
 };
 
