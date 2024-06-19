@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 import TodoItem from './TodoItem';
 
 interface Todo {
@@ -18,16 +18,27 @@ interface TodoListProps {
 
 const TodoList: React.FC<TodoListProps> = ({ todos, toggleCompleteTodo, deleteTodo }) => {
   return (
-    <View style={styles.listContainer}>
-      {todos.map(todo => (
-        <TodoItem
-          key={todo.id}
-          todo={todo}
-          toggleCompleteTodo={toggleCompleteTodo}
-          deleteTodo={deleteTodo}
-        />
-      ))}
-    </View>
+    <FlatList
+    data={todos}
+    renderItem={({ item }) => (
+      <TodoItem
+        todo={item}
+        toggleCompleteTodo={toggleCompleteTodo}
+        deleteTodo={deleteTodo}
+      />
+    )}
+    keyExtractor={(item) => item.id.toString()}
+  />
+    // <View style={styles.listContainer}>
+    //   {todos.map(todo => (
+    //     <TodoItem
+    //       key={todo.id}
+    //       todo={todo}
+    //       toggleCompleteTodo={toggleCompleteTodo}
+    //       deleteTodo={deleteTodo}
+    //     />
+    //   ))}
+    // </View>
   );
 };
 
