@@ -1,6 +1,6 @@
 import { initialTodos } from "@/data/data";
-import TodoInput from "@/src/TodoInput";
-import TodoList from "@/src/TodoList";
+import TodoInput from "@/components/TodoInput";
+import TodoList from "@/components/TodoList";
 import React, { useState, useEffect } from "react";
 import { SafeAreaView, StyleSheet, FlatList } from "react-native";
 
@@ -13,12 +13,8 @@ interface Todo {
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
+
   useEffect(() => {
-    // const initialData: Todo[] = [
-    //   { id: 1, title: "Learn React Native", completed: false },
-    //   { id: 2, title: "Write Todo App", completed: false },
-    //   { id: 3, title: "Test the App", completed: false },
-    // ];
     setTodos(initialTodos);
   }, []);
 

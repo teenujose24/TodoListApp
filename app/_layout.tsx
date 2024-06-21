@@ -5,7 +5,7 @@ export default function RootLayout() {
     <Stack
       screenOptions={{
         headerStyle: {
-          backgroundColor: "#f4511e",
+          backgroundColor: "#5AD86F",
         },
         headerTintColor: "#fff",
         headerTitleStyle: {
@@ -13,7 +13,12 @@ export default function RootLayout() {
         },
       }}
     >
-      <Stack.Screen name="index" />
+      <Stack.Screen
+        name="index"
+        options={{
+          title: "Todo List",
+        }}
+      />
     </Stack>
   );
 }
